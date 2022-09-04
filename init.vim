@@ -46,6 +46,9 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
+" sync
+Plug 'kenn7/vim-arsync'
+
 call plug#end()
 
 :lua require("keybindings")

@@ -25,4 +25,9 @@ sudo make install
 ```
 sudo apt install ctags
 ```
+### sshpass
+vim-arsync需要
+```
+sudo apt install sshpass
+```
 
