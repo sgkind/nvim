@@ -35,7 +35,7 @@ Plug 'easymotion/vim-easymotion'  "代码跳转，页面内跳转
 
 " lsp
 Plug 'neovim/nvim-lspconfig'
-Plug 'p00f/clangd_extensions.nvim'
+" Plug 'p00f/clangd_extensions.nvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -48,6 +48,7 @@ Plug 'hrsh7th/vim-vsnip'
 
 call plug#end()
 
+:lua require("keybindings")
 :lua require("lsp")
 
 " 快捷键
