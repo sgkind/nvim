@@ -10,7 +10,7 @@ set autoindent
 
 
 " 配套插件
-call plug#begin()
+call plug#begin('~/.config/nvim/plugged')
 
 " 状态栏 多文件切换
 Plug 'vim-airline/vim-airline'
