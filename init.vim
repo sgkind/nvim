@@ -9,6 +9,10 @@ set hlsearch
 set autoindent
 set colorcolumn=80
 
+set nobackup
+set noswapfile
+set nowritebackup
+set noundofile
 
 " 配套插件
 call plug#begin('~/.config/nvim/plugged')
