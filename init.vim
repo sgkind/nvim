@@ -7,6 +7,7 @@ set tabstop=2
 set encoding=utf-8
 set hlsearch
 set autoindent
+set colorcolumn=80
 
 
 " 配套插件
