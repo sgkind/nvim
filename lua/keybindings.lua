@@ -26,6 +26,8 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 local pluginKeys = {}
 
 map("n", "<leader>e", ":NERDTreeToggle<CR>", opt)
+map("n", "<leader>o", ":NERDTreeFocus<CR>", opt)
+map("n", "<leader>w", ":NERDTreeFind<cR>", opt)
 
 pluginKeys.mapLSP = function(mapbuf)
 	-- rename
