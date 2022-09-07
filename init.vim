@@ -51,13 +51,29 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
+" 模糊匹配工具
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
+" git
+Plug 'lewis6991/gitsigns.nvim'
+
+Plug 'liuchengxu/vista.vim'
+
 " sync
 Plug 'kenn7/vim-arsync'
+
+" markdown
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim'
 
 call plug#end()
 
 :lua require("keybindings")
 :lua require("lsp")
+
+:lua require('gitsigns').setup()
 
 " 快捷键
 nmap <leader>1 <Plug>AirlineSelectTab1

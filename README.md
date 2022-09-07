@@ -30,4 +30,18 @@ vim-arsync需要
 ```
 sudo apt install sshpass
 ```
+### markdown-preview
+在nvim中执行如下命令
+```
+:call mkdp#util#install()
+```
 
+## markdown
+[Vim Markdown](https://github.com/preservim/vim-markdown)
+
+[markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
+
+预览命令
+* :MakrdownPreview
+* :MarkdownPreviewStop
+* :MarkdownPreviewToggle
