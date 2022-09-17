@@ -38,6 +38,9 @@ Plug 'inkarkat/vim-mark'
 Plug 'jsfaint/gen_tags.vim'
 Plug 'easymotion/vim-easymotion'  "代码跳转，页面内跳转
 
+" 代码格式化工具
+Plug 'rhysd/vim-clang-format'
+
 " lsp
 Plug 'neovim/nvim-lspconfig'
 " Plug 'p00f/clangd_extensions.nvim'
