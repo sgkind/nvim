@@ -17,10 +17,6 @@ set noundofile
 " 配套插件
 call plug#begin('~/.config/nvim/plugged')
 
-" 状态栏 多文件切换
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-
 " 高亮
 Plug 'luochen1990/rainbow'  " 括号高亮
 Plug 'inkarkat/vim-mark'    " 代码高亮
@@ -29,7 +25,6 @@ Plug 'sheerun/vim-polyglot' " 语法高亮
 " 目录
 Plug 'preservim/nerdtree'
 Plug 'majutsushi/tagbar'
-Plug 'lukas-reineke/indent-blankline.nvim' "对齐线
 
 Plug 'vim-scripts/taglist.vim'
 
@@ -75,65 +70,17 @@ Plug 'iamcco/markdown-preview.nvim'
 
 call plug#end()
 
-lua << END
-require('lualine').setup {
-  options = {
-    icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {
-      statusline = {},
-      winbar = {},
-    },
-    ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = false,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-    }
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
-}
+:lua require("plugins")
 
-vim.opt.list = true
-vim.opt.listchars:append "space:⋅"
-require("indent_blankline").setup {
-	show_current_context = true,
-	show_current_context_start = true,
-	show_end_of_line = true,
-	space_char_blankline = " ",
-}
-END
 :lua require("lsp")
 
 :lua require('gitsigns').setup()
 
 set completeopt=menu,menuone,noselect
 :lua require("nvim-cmp")
-
+:lua require("others")
 :lua require("keybindings")
+
 " 快捷键
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
