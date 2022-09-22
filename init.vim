@@ -29,7 +29,7 @@ Plug 'sheerun/vim-polyglot' " 语法高亮
 " 目录
 Plug 'preservim/nerdtree'
 Plug 'majutsushi/tagbar'
-Plug 'Yggdroot/indentLine' "对齐线
+Plug 'lukas-reineke/indent-blankline.nvim' "对齐线
 
 Plug 'vim-scripts/taglist.vim'
 
@@ -74,7 +74,7 @@ Plug 'iamcco/markdown-preview.nvim'
 call plug#end()
 
 lua << END
- require('lualine').setup {
+require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'auto',
@@ -113,6 +113,16 @@ lua << END
   winbar = {},
   inactive_winbar = {},
   extensions = {}
+}
+
+vim.opt.list = true
+vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append "eol:↴"
+require("indent_blankline").setup {
+	show_current_context = true,
+	show_current_context_start = true,
+	show_end_of_line = true,
+	space_char_blankline = " ",
 }
 END
 :lua require("keybindings")
