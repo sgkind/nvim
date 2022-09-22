@@ -10,6 +10,8 @@ map("i", "<C-f>", "<Right>", opt)
 
 -- windows分屏快捷键
 map("n", "<leader>ss", ":vsp<CR>", opt)
+map("n", "<leader>h", "<C-w>h", opt)
+map("n", "<leader>l", "<C-w>l", opt)
 -- 关闭当前
 map("n", "<leader>x", "<C-w>c", opt)
 -- 新tab打开当前页面
