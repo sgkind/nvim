@@ -41,9 +41,10 @@ Plug 'easymotion/vim-easymotion'  "代码跳转，页面内跳转
 " 代码格式化工具
 Plug 'rhysd/vim-clang-format'
 
+" Plug 'p00f/clangd_extensions.nvim'
+
 " lsp
 Plug 'neovim/nvim-lspconfig'
-" Plug 'p00f/clangd_extensions.nvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -53,6 +54,7 @@ Plug 'hrsh7th/nvim-cmp'
 " For vsnip users
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+
 
 " 模糊匹配工具
 Plug 'junegunn/fzf'
@@ -124,11 +126,14 @@ require("indent_blankline").setup {
 	space_char_blankline = " ",
 }
 END
-:lua require("keybindings")
 :lua require("lsp")
 
 :lua require('gitsigns').setup()
 
+set completeopt=menu,menuone,noselect
+:lua require("nvim-cmp")
+
+:lua require("keybindings")
 " 快捷键
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
