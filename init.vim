@@ -52,13 +52,17 @@ Plug 'hrsh7th/vim-vsnip'
 
 
 " 模糊匹配工具
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf'
+" Plug 'junegunn/fzf.vim'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
 " git
 Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'liuchengxu/vista.vim'
+
+" 内置终端
+Plug 'skywind3000/vim-terminal-help'
 
 " sync
 Plug 'kenn7/vim-arsync'
@@ -79,6 +83,9 @@ call plug#end()
 set completeopt=menu,menuone,noselect
 :lua require("nvim-cmp")
 :lua require("others")
+
+let g:Lf_PreviewInPopup = 1
+
 :lua require("keybindings")
 
 " 快捷键
