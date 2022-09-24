@@ -31,6 +31,12 @@ map("n", "<leader>e", ":NERDTreeToggle<CR>", opt)
 map("n", "<leader>o", ":NERDTreeFocus<CR>", opt)
 map("n", "<leader>w", ":NERDTreeFind<cR>", opt)
 
+-- Find files using Telescope command-line sugar
+map('n', '<leader>ff', ':Telescope find_files<CR>', opt)
+map('n', '<leader>fg', ':Telescope live_grep<CR>', opt)
+map('n', '<leader>fb', ':Telescope buffers<CR>', opt)
+map('n', '<leader>fh', ':Telescope help_tags<CR>', opt)
+
 pluginKeys.mapLSP = function(mapbuf)
 	-- rename
 	mapbuf('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
@@ -47,7 +53,7 @@ pluginKeys.mapLSP = function(mapbuf)
 	mapbuf('n', 'gk', '<cmd> lua vim.diagnostic.goto_prev()<CR>', opt)
 	mapbuf('n', 'gj', '<cmd> lua vim.diagnostic.goto_next()<CR>', opt)
 	-- format
-	mapbuf('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap = true })
+	mapbuf('n', '<leader>fo', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap = true })
 end
 
 return pluginKeys
