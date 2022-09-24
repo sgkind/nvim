@@ -39,7 +39,12 @@ Plug 'rhysd/vim-clang-format'
 " Plug 'p00f/clangd_extensions.nvim'
 
 " lsp
+" Collection of common configurations for the nvim lsp client
 Plug 'neovim/nvim-lspconfig'
+
+" Extentions to build-in lsp, for example, providing type inlay hints
+Plug 'nvim-lua/lsp_extensions.nvim'
+
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -50,6 +55,14 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
+" To enable more of the features of rust-analyzer, such as inlay hints
+Plug 'simrat39/rust-tools.nvim'
+
+" Fuzzy finder
+" Optional
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " 模糊匹配工具
 " Plug 'junegunn/fzf'
@@ -77,9 +90,18 @@ call plug#end()
 
 :lua require('gitsigns').setup()
 
-set completeopt=menu,menuone,noselect
 :lua require("nvim-cmp")
 :lua require("others")
+
+" Set completeopt to have a better completion experience
+" :help completeopt
+" menuone: popup even when ther's only one match
+" noinsert: Do not insert text until a selection is made
+" noselect: Do not select, force user to select one from the menu
+set completeopt=menu,menuone,noselect
+
+" Avoid showing extra messages when using completion
+set shortmess+=c
 
 :lua require("keybindings")
 
