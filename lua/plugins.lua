@@ -39,14 +39,6 @@ return require('packer').startup{
 
     use { "wbthomason/packer.nvim", opt = true }
 
-
-    -- File search, tag search and more
-    if vim.g.is_win then
-      use { "Yggdroot/LeaderF", cmd = "Leaderf" }
-    else
-      use { "Yggdroot/LeaderF", cmd = "Leaderf", run = ":LeaderfInstallCExtension" }
-    end
-
     -- Only install these plugins if ctags are installed on the system
     if utils.executable("ctags") then
       -- show file tags in vim window
