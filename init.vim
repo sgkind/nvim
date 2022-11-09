@@ -52,12 +52,6 @@ Plug 'simrat39/rust-tools.nvim'
 " Fuzzy finder
 " Optional
 Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-
-" 模糊匹配工具
-" Plug 'junegunn/fzf'
-" Plug 'junegunn/fzf.vim'
 
 " 内置终端
 Plug 'skywind3000/vim-terminal-help'
@@ -68,6 +62,9 @@ Plug 'preservim/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim'
 
 call plug#end()
+
+"vim-markdown disable folding
+let g:vim_markdown_folding_disabled = 1
 
 " for nvim-tree
 :lua vim.g.loaded_netrw = 1

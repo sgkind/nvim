@@ -58,7 +58,10 @@ sudo apt install sshpass
 ```
 :call mkdp#util#install()
 ```
-
+### ripgrep
+```
+sudo apt install ripgrep
+```
 
 
 ## markdown

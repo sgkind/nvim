@@ -63,6 +63,18 @@ return require('packer').startup{
       tag = 'nightly'
     }
 
+    -- fuzzy finder
+    use {
+      "nvim-telescope/telescope.nvim",
+      requires = {
+        "nvim-lua/plenary.nvim"
+      }
+    }
+    use {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      run = "make"
+    }
+
     -- buffer line
     use {
       'akinsho/bufferline.nvim',

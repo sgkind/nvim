@@ -30,11 +30,16 @@ map("n", "<leader>o", ":NvimTreeFocus<CR>", opts)
 map("n", "<leader>w", ":NvimTreeFindFile<CR>", opts)
 map("n", "<leader>c", ":NvimTreeCollapse<CR>", opts)
 
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 -- Find files using Telescope command-line sugar
-map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
-map('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
-map('n', '<leader>fb', ':Telescope buffers<CR>', opts)
-map('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
+--map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
+--map('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
+--map('n', '<leader>fb', ':Telescope buffers<CR>', opts)
+--map('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
 
 -- tabline barbar
 -- Move to previous/next
