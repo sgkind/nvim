@@ -37,7 +37,9 @@ return require('packer').startup{
     -- it is recommended to put impatient.nvim before any other plugins
     use { "lewis6991/impatient.nvim", config = [[require('impatient')]] }
 
-    use { "wbthomason/packer.nvim", opt = true }
+    use "wbthomason/packer.nvim" -- Package manager
+ 
+    use "neovim/nvim-lspconfig" -- Configurations for Nvim LSP
 
     -- Only install these plugins if ctags are installed on the system
     if utils.executable("ctags") then
@@ -47,6 +49,12 @@ return require('packer').startup{
 
     -- indent
     use "lukas-reineke/indent-blankline.nvim"
+
+    -- tab line
+    use {
+      'romgrk/barbar.nvim',
+      requires = {'kyazdani42/nvim-web-devicons'}
+    }
 
     -- lualine
     use {
