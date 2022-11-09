@@ -25,9 +25,10 @@ map("v", ">", ">gv", opts)
 map("v", "J", ":move '>+1<CR>gv-gv", opts)
 map("v", "K", ":move '<-2<CR>gv-gv", opts)
 
-map("n", "<leader>e", ":NERDTreeToggle<CR>", opts)
-map("n", "<leader>o", ":NERDTreeFocus<CR>", opts)
-map("n", "<leader>w", ":NERDTreeFind<cR>", opts)
+map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+map("n", "<leader>o", ":NvimTreeFocus<CR>", opts)
+map("n", "<leader>w", ":NvimTreeFindFile<CR>", opts)
+map("n", "<leader>c", ":NvimTreeCollapse<CR>", opts)
 
 -- Find files using Telescope command-line sugar
 map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
@@ -37,21 +38,21 @@ map('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
 
 -- tabline barbar
 -- Move to previous/next
-map('n', '<A-,>', ':BufferPrevious<CR>', opts)
-map('n', '<A-.>', ':BufferNext<CR>', opts)
+map('n', '<A-,>', ':BufferCyclePrev<CR>', opts)
+map('n', '<A-.>', ':BufferCycleNext<CR>', opts)
 -- Re-order to previous/next
 map('n', '<A-<>', ':BufferMovePrevious<CR>', opts)
-map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
+map('n', '<A->>', ':BufferMoveNext<CR>', opts)
 -- Goto buffer in position..
-map('n', '<leader>1', ':BufferGoto 1<CR>', opts)
-map('n', '<leader>2', '<Cmd>BufferGoto 2<CR>', opts)
-map('n', '<leader>3', '<Cmd>BufferGoto 3<CR>', opts)
-map('n', '<leader>4', '<Cmd>BufferGoto 4<CR>', opts)
-map('n', '<leader>5', '<Cmd>BufferGoto 5<CR>', opts)
-map('n', '<leader>6', '<Cmd>BufferGoto 6<CR>', opts)
-map('n', '<leader>7', '<Cmd>BufferGoto 7<CR>', opts)
-map('n', '<leader>8', '<Cmd>BufferGoto 8<CR>', opts)
-map('n', '<leader>9', '<Cmd>BufferGoto 9<CR>', opts)
+map('n', '<leader>1', ':BufferLineGoToBuffer 1<CR>', opts)
+map('n', '<leader>2', ':BufferLineGoToBuffer 2<CR>', opts)
+map('n', '<leader>3', ':BufferLineGoToBuffer 3<CR>', opts)
+map('n', '<leader>4', ':BufferLineGoToBuffer 4<CR>', opts)
+map('n', '<leader>5', ':BufferLineGoToBuffer 5<CR>', opts)
+map('n', '<leader>6', ':BufferLineGoToBuffer 6<CR>', opts)
+map('n', '<leader>7', ':BufferLineGoToBuffer 7<CR>', opts)
+map('n', '<leader>8', ':BufferLineGoToBuffer 8<CR>', opts)
+map('n', '<leader>9', ':BufferLineGoToBuffer 9<CR>', opts)
 map('n', '<leader>0', '<Cmd>BufferLast<CR>', opts)
 -- Pin/unpin buffer
 map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)

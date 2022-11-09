@@ -48,18 +48,40 @@ return require('packer').startup{
     end
 
     -- indent
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+    }
     use "lukas-reineke/indent-blankline.nvim"
 
-    -- tab line
+    -- 目录
     use {
-      'romgrk/barbar.nvim',
-      requires = {'kyazdani42/nvim-web-devicons'}
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+        'nvim-tree/nvim-web-devicons',
+      },
+      tag = 'nightly'
+    }
+
+    -- buffer line
+    use {
+      'akinsho/bufferline.nvim',
+      tag = "v3.*",
+      requires = {'nvim-tree/nvim-web-devicons'}
     }
 
     -- lualine
     use {
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true}
+    }
+
+    -- git
+    use {
+      'lewis6991/gitsigns.nvim',
+    }
+    use {
+      'tpope/vim-fugitive',
     }
   end,
   config = {

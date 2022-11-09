@@ -14,22 +14,21 @@ set noswapfile
 set nowritebackup
 set noundofile
 
+set nocompatible
+
 " 配套插件
 call plug#begin('~/.config/nvim/plugged')
 
 " 高亮
 Plug 'luochen1990/rainbow'  " 括号高亮
-Plug 'inkarkat/vim-mark'    " 代码高亮
 Plug 'sheerun/vim-polyglot' " 语法高亮
 
-" 目录
-Plug 'preservim/nerdtree'
+" tagbar
 Plug 'majutsushi/tagbar'
 
 Plug 'vim-scripts/taglist.vim'
 
 Plug 'inkarkat/vim-ingo-library'
-Plug 'inkarkat/vim-mark'
 Plug 'jsfaint/gen_tags.vim'
 Plug 'easymotion/vim-easymotion'  "代码跳转，页面内跳转
 
@@ -38,16 +37,11 @@ Plug 'rhysd/vim-clang-format'
 
 " Plug 'p00f/clangd_extensions.nvim'
 
-" lsp
-" Collection of common configurations for the nvim lsp client
-Plug 'neovim/nvim-lspconfig'
-
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-
 " For vsnip users
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
@@ -65,14 +59,8 @@ Plug 'nvim-telescope/telescope.nvim'
 " Plug 'junegunn/fzf'
 " Plug 'junegunn/fzf.vim'
 
-" git
-Plug 'lewis6991/gitsigns.nvim'
-
 " 内置终端
 Plug 'skywind3000/vim-terminal-help'
-
-" sync
-Plug 'kenn7/vim-arsync'
 
 " markdown
 Plug 'godlygeek/tabular'
@@ -81,13 +69,17 @@ Plug 'iamcco/markdown-preview.nvim'
 
 call plug#end()
 
+" for nvim-tree
+:lua vim.g.loaded_netrw = 1
+:lua vim.g.loaded_netrwPlugin = 1
+
 :lua require("plugins")
 
 :lua require("lsp")
 
+" to setup https://github.com/lewis6991/gitsigns.nvim
 :lua require('gitsigns').setup()
 
-:lua require("nvim-cmp")
 :lua require("others")
 
 " Set completeopt to have a better completion experience
@@ -96,6 +88,8 @@ call plug#end()
 " noinsert: Do not insert text until a selection is made
 " noselect: Do not select, force user to select one from the menu
 set completeopt=menu,menuone,noselect
+
+:lua require("nvim-cmp")
 
 " Avoid showing extra messages when using completion
 set shortmess+=c
