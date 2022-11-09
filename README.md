@@ -1,3 +1,26 @@
+## 快捷键
+### insert模式
+
+|快捷键| 绑定 | 作用 |
+|:-----:|:----:|:-----|
+|Ctrl+f| <Right> | <不知道> |
+
+
+### normal模式
+|快捷键| 绑定 | 作用 |
+|:-----:|:----:|:----|
+|<leader>ss|:vsp<CR>|垂直分割窗口|
+
+
+### visual 模式
+ 快捷键| 绑定 | 作用 |
+|:------:|:------:|:------|
+|Ctrl+y| +y |复制到系统剪贴板|
+|<     | <gv  |缩进代码|
+|>     | >gv  |缩进代码|
+|J     |:move '>+1<CR>gv-gv| |
+|K     |:move '<-2<CR>gv-gv| |
+
 ## 依赖
 ### global
 * apt按照
@@ -36,12 +59,16 @@ sudo apt install sshpass
 :call mkdp#util#install()
 ```
 
+
+
 ## markdown
 [Vim Markdown](https://github.com/preservim/vim-markdown)
 
 [markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
 
 预览命令
-* :MakrdownPreview
+* :MarkdownPreview
 * :MarkdownPreviewStop
 * :MarkdownPreviewToggle
+
+
