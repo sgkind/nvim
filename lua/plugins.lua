@@ -38,8 +38,9 @@ return require('packer').startup{
     use { "lewis6991/impatient.nvim", config = [[require('impatient')]] }
 
     use "wbthomason/packer.nvim" -- Package manager
- 
+
     use "neovim/nvim-lspconfig" -- Configurations for Nvim LSP
+    use 'simrat39/rust-tools.nvim' -- To enable more of features of rust-analyzer
 
     -- Only install these plugins if ctags are installed on the system
     if utils.executable("ctags") then
@@ -95,6 +96,13 @@ return require('packer').startup{
     use {
       'tpope/vim-fugitive',
     }
+
+    --markdown
+
+    use({
+      'iamcco/markdown-preview.nvim',
+      run = function() vim.fn["mkdp#util#install"]() end,
+    })
   end,
   config = {
     max_jobs = 16,

@@ -46,9 +46,6 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
-" To enable more of the features of rust-analyzer, such as inlay hints
-Plug 'simrat39/rust-tools.nvim'
-
 " Fuzzy finder
 " Optional
 Plug 'nvim-lua/popup.nvim'
@@ -59,7 +56,6 @@ Plug 'skywind3000/vim-terminal-help'
 " markdown
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim'
 
 call plug#end()
 
