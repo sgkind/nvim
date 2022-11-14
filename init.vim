@@ -29,7 +29,6 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/taglist.vim'
 
 Plug 'inkarkat/vim-ingo-library'
-Plug 'jsfaint/gen_tags.vim'
 Plug 'easymotion/vim-easymotion'  "代码跳转，页面内跳转
 
 " 代码格式化工具

@@ -38,8 +38,10 @@ return require('packer').startup{
     use { "lewis6991/impatient.nvim", config = [[require('impatient')]] }
 
     use "wbthomason/packer.nvim" -- Package manager
-
-    use "neovim/nvim-lspconfig" -- Configurations for Nvim LSP
+ 
+    use {  -- Configurations for Nvim LSP
+      "neovim/nvim-lspconfig",
+    }
     use 'simrat39/rust-tools.nvim' -- To enable more of features of rust-analyzer
 
     -- Only install these plugins if ctags are installed on the system
